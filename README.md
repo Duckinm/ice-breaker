@@ -42,3 +42,5 @@ GSD Soon!
 - Elysia as a backend
 
 ### Known Issues
+
+- JSX+ is not pretty much stable yet, the TS type is not fully supported.

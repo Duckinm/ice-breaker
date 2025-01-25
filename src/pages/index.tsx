@@ -39,9 +39,10 @@ export default function IndexPage({ isAdmin = true, dataSource = [{ name: 'hello
         <h2 className="font-semibold text-3xl">JSX Plus</h2>
         <div x-if={isAdmin}>admin</div>
         <div x-else>guest</div>
-        <div x-for={(item in dataSource)}>
+
+        {/* <div x-for={(item in dataSource)}>
           <span key={item.name}>{item.name}</span>
-        </div>
+        </div> */}
       </main>
     </>
   );
