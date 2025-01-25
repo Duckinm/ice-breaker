@@ -7,6 +7,7 @@ import './src/env';
 // The project config, see https://v3.ice.work/docs/guide/basic/config
 const minify = process.env.NODE_ENV === 'production' ? 'swc' : false;
 export default defineConfig(() => ({
+  outputDir: 'dist',
   minify,
   ssr: true,
   ssg: false,
@@ -14,6 +15,7 @@ export default defineConfig(() => ({
     onDemand: true,
     format: 'esm',
   },
+  dropLogLevel: 'warn',
   mock: {
     exclude: ['custom/**', 'api.ts'],
   },
