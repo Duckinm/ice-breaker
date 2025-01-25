@@ -1,3 +1,4 @@
+import { env } from '@/env';
 import store from '@/store';
 import { defineDataLoader, definePageConfig, useData } from 'ice';
 import { lazy, useEffect } from 'react';
@@ -62,9 +63,8 @@ export const pageConfig = definePageConfig(() => ({
 }));
 
 export const dataLoader = defineDataLoader(async (ctx) => {
-  console.log(ctx.pathname);
-  console.log(ctx.query);
+  const data = await fetch(`${env.APP_URL}/api/users`);
+  const result = await data.json();
 
-  const data = await fetch('https://localhost:3000/api/users');
-  return await data.json();
+  return result;
 });
